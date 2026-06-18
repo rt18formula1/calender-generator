@@ -1,63 +1,39 @@
-# Calendar Generator
+**Welcome to your Base44 project** 
 
-アートワーク画像をアップロードして、オリジナルのカレンダーを生成・エクスポートできる Web アプリケーションです。
+**About**
 
-## 機能
+View and Edit  your app on [Base44.com](http://Base44.com) 
 
-- **テンプレート選択** — IKEA 風、壁紙風など複数のレイアウトテンプレートから選択可能。カスタムサイズにも対応。
-- **アートワークアップロード** — 任意の画像をアップロードすると、縦長 / 横長を自動判定してレイアウトを最適化。
-- **年月選択** — 任意の年・月のカレンダーを生成。
-- **プレビュー** — リアルタイムでカレンダーのプレビューを確認。
-- **エクスポート** — 完成したカレンダーを画像として書き出し。
+This project contains everything you need to run your app locally.
 
-## 技術スタック
+**Edit the code in your local development environment**
 
-| カテゴリ | 技術 |
-|---------|------|
-| フレームワーク | React 18 |
-| ビルドツール | Vite |
-| スタイリング | Tailwind CSS 3 |
-| UIコンポーネント | shadcn/ui (Radix UI) |
-| ルーティング | React Router v6 |
-| 状態管理 | TanStack React Query |
-| アイコン | Lucide React |
-| エクスポート | html2canvas / jsPDF |
-| ホスティング | Vercel |
+Any change pushed to the repo will also be reflected in the Base44 Builder.
 
-## セットアップ
+**Prerequisites:** 
 
-### 前提条件
+1. Clone the repository using the project's Git URL 
+2. Navigate to the project directory
+3. Install dependencies: `npm install`
+4. Create an `.env.local` file and set the right environment variables
 
-- Node.js 18 以上
-- npm
+```
+VITE_BASE44_APP_ID=your_app_id
+VITE_BASE44_APP_BASE_URL=your_backend_url
 
-### インストール
-
-```bash
-git clone https://github.com/rt18formula1/calender-generator.git
-cd calender-generator
-npm install
+e.g.
+VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
+VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
 ```
 
-### 開発サーバー起動
+Run the app: `npm run dev`
 
-```bash
-npm run dev
-```
+**Publish your changes**
 
-### プロダクションビルド
+Open [Base44.com](http://Base44.com) and click on Publish.
 
-```bash
-npm run build
-npm run preview  # ビルド結果のプレビュー
-```
+**Docs & Support**
 
-## デプロイ
+Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
 
-Vercel にデプロイされています。`main` ブランチへの Push で自動デプロイが可能です。
-
-**公開URL:** https://calendar-generator-six.vercel.app
-
-## ライセンス
-
-Private
+Support: [https://app.base44.com/support](https://app.base44.com/support)
