@@ -1,39 +1,63 @@
-**Welcome to your Base44 project** 
+# Calendar Generator
 
-**About**
+アートワーク画像をアップロードして、オリジナルのカレンダーを生成・エクスポートできる Web アプリケーションです。
 
-View and Edit  your app on [Base44.com](http://Base44.com) 
+## 機能
 
-This project contains everything you need to run your app locally.
+- **テンプレート選択** — IKEA 風、壁紙風など複数のレイアウトテンプレートから選択可能。カスタムサイズにも対応。
+- **アートワークアップロード** — 任意の画像をアップロードすると、縦長 / 横長を自動判定してレイアウトを最適化。
+- **年月選択** — 任意の年・月のカレンダーを生成。
+- **プレビュー** — リアルタイムでカレンダーのプレビューを確認。
+- **エクスポート** — 完成したカレンダーを画像として書き出し。
 
-**Edit the code in your local development environment**
+## 技術スタック
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+| カテゴリ | 技術 |
+|---------|------|
+| フレームワーク | React 18 |
+| ビルドツール | Vite |
+| スタイリング | Tailwind CSS 3 |
+| UIコンポーネント | shadcn/ui (Radix UI) |
+| ルーティング | React Router v6 |
+| 状態管理 | TanStack React Query |
+| アイコン | Lucide React |
+| エクスポート | html2canvas / jsPDF |
+| ホスティング | Vercel |
 
-**Prerequisites:** 
+## セットアップ
 
-1. Clone the repository using the project's Git URL 
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Create an `.env.local` file and set the right environment variables
+### 前提条件
 
+- Node.js 18 以上
+- npm
+
+### インストール
+
+```bash
+git clone https://github.com/rt18formula1/calender-generator.git
+cd calender-generator
+npm install
 ```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
 
-e.g.
-VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
-VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
+### 開発サーバー起動
+
+```bash
+npm run dev
 ```
 
-Run the app: `npm run dev`
+### プロダクションビルド
 
-**Publish your changes**
+```bash
+npm run build
+npm run preview  # ビルド結果のプレビュー
+```
 
-Open [Base44.com](http://Base44.com) and click on Publish.
+## デプロイ
 
-**Docs & Support**
+Vercel にデプロイされています。`main` ブランチへの Push で自動デプロイが可能です。
 
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
+**公開URL:** https://calendar-generator-six.vercel.app
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+## ライセンス
+
+Private
