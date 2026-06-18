@@ -4,7 +4,11 @@
 
 View and Edit  your app on [Base44.com](http://Base44.com) 
 
-This project contains everything you need to run your app locally.
+- **テンプレート選択** — IKEAのフォトフレーム、デバイスの壁紙など複数のレイアウトテンプレートから選択可能。カスタムサイズにも対応。
+- **アートワークアップロード** — 任意の画像をアップロードすると、縦長 / 横長を自動判定してレイアウトを最適化。
+- **年月選択** — 任意の年・月のカレンダーを生成。
+- **プレビュー** — リアルタイムでカレンダーのプレビューを確認。
+- **エクスポート** — 完成したカレンダーを画像として書き出し。
 
 **Edit the code in your local development environment**
 
@@ -36,4 +40,10 @@ Open [Base44.com](http://Base44.com) and click on Publish.
 
 Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+Vercel にデプロイされています。`main` ブランチへの Push で自動デプロイが可能です。
+
+**公開URL:** https://calendar-generator-six.vercel.app
+
+## ライセンス
+
+Private
