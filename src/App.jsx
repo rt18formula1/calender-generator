@@ -6,7 +6,6 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import Home from '@/pages/Home';
-import AdSenseScript from '@/components/ads/AdSenseScript';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -47,7 +46,6 @@ function App() {
 
   return (
     <AuthProvider>
-      <AdSenseScript />
       <QueryClientProvider client={queryClientInstance}>
         <Router>
           <AuthenticatedApp />
