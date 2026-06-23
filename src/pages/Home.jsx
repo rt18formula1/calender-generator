@@ -8,6 +8,7 @@ import WallpaperPreview from "@/components/calendar/WallpaperPreview";
 import ExportButton from "@/components/calendar/ExportButton";
 import TemplateSelector, { TEMPLATES, CUSTOM_ID } from "@/components/calendar/TemplateSelector";
 import CustomSizePanel from "@/components/calendar/CustomSizePanel";
+import AdSenseUnit from "@/components/ads/AdSenseUnit";
 
 export default function Home() {
   const now = new Date();
@@ -63,6 +64,13 @@ export default function Home() {
       </header>
 
       <main className="max-w-6xl mx-auto px-6 sm:px-8 py-10 lg:py-16">
+        {/* Top Advertisement Section */}
+        <div className="mb-10 flex justify-center">
+          <div className="w-full max-w-4xl">
+            <AdSenseUnit slotId="1234567890" format="auto" className="text-center" />
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-10 lg:gap-16">
           {/* Controls */}
           <aside className="space-y-8">
@@ -159,6 +167,11 @@ export default function Home() {
                 </p>
               </section>
             )}
+
+            {/* Side Advertisement Section */}
+            <section className="pt-4 border-t border-neutral-200">
+              <AdSenseUnit slotId="9876543210" format="vertical" className="flex justify-center" />
+            </section>
           </aside>
 
           {/* Preview */}
@@ -188,6 +201,13 @@ export default function Home() {
             </div>
             <ExportButton layoutRef={layoutRef} orientation={orientation} />
           </section>
+        </div>
+
+        {/* Bottom Advertisement Section */}
+        <div className="mt-10 flex justify-center">
+          <div className="w-full max-w-4xl">
+            <AdSenseUnit slotId="5555555555" format="auto" className="text-center" />
+          </div>
         </div>
       </main>
 
