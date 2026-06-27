@@ -5,7 +5,7 @@
       "destination": "https://base44.app/api/:path*"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!sitemap\\.xml|robots\\.txt|llms\\.txt|google.*\\.html|favicon.*|manifest\\.json|.*\\.png|.*\\.svg|.*\\.webp|.*\\.ico).*)",
       "destination": "/index.html"
     }
   ]
