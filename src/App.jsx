@@ -6,6 +6,7 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import Home from '@/pages/Home';
+import { I18nProvider } from '@/lib/i18n';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -46,12 +47,14 @@ function App() {
 
   return (
     <AuthProvider>
-      <QueryClientProvider client={queryClientInstance}>
+      <I18nProvider>
+        <QueryClientProvider client={queryClientInstance}>
         <Router>
           <AuthenticatedApp />
         </Router>
         <Toaster />
-      </QueryClientProvider>
+        </QueryClientProvider>
+      </I18nProvider>
     </AuthProvider>
   )
 }

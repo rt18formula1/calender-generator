@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useI18n } from "@/lib/i18n";
 
 const tabBtn = (active) => ({
   padding: "5px 14px",
@@ -20,18 +21,14 @@ const numInput = {
   textAlign: "right",
 };
 
-/**
- * CustomSizePanel
- * Emits: onChange({ aspectW, aspectH, unit: "mm"|"px", width, height })
- */
 export default function CustomSizePanel({ value, onChange }) {
+  const { t } = useI18n();
   const [unit, setUnit] = useState(value?.unit || "mm");
   const [w, setW] = useState(value?.width || (unit === "mm" ? 210 : 1920));
   const [h, setH] = useState(value?.height || (unit === "mm" ? 297 : 1080));
 
   const handleUnitChange = (u) => {
     setUnit(u);
-    // デフォルトサイズをリセット
     const dw = u === "mm" ? 210 : 1920;
     const dh = u === "mm" ? 297 : 1080;
     setW(dw);
@@ -50,20 +47,18 @@ export default function CustomSizePanel({ value, onChange }) {
 
   return (
     <div style={{ marginTop: 8 }}>
-      {/* 用途タブ */}
       <div style={{ display: "flex", gap: 0, marginBottom: 10 }}>
         <button style={tabBtn(unit === "mm")} onClick={() => handleUnitChange("mm")}>
-          印刷用 (mm)
+          {t('printUse')}
         </button>
         <button style={tabBtn(unit === "px")} onClick={() => handleUnitChange("px")}>
-          画面用 (px)
+          {t('screenUse')}
         </button>
       </div>
 
-      {/* サイズ入力 */}
       <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-          <span style={{ fontSize: 10, color: "#888" }}>W</span>
+          <span style={{ fontSize: 10, color: "#888" }}>{t('width')}</span>
           <input
             type="number"
             min={1}
@@ -74,7 +69,7 @@ export default function CustomSizePanel({ value, onChange }) {
         </div>
         <span style={{ fontSize: 12, color: "#aaa" }}>×</span>
         <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-          <span style={{ fontSize: 10, color: "#888" }}>H</span>
+          <span style={{ fontSize: 10, color: "#888" }}>{t('height')}</span>
           <input
             type="number"
             min={1}
@@ -86,11 +81,10 @@ export default function CustomSizePanel({ value, onChange }) {
         <span style={{ fontSize: 10, color: "#aaa" }}>{unit}</span>
       </div>
 
-      {/* プリセット */}
       <div style={{ marginTop: 8, display: "flex", gap: 4, flexWrap: "wrap" }}>
         {unit === "mm" ? (
           <>
-            {[["A4 縦", 210, 297], ["A4 横", 297, 210], ["A3 縦", 297, 420], ["正方形", 200, 200]].map(([l, pw, ph]) => (
+            {[[t('a4Portrait'), 210, 297], [t('a4Landscape'), 297, 210], [t('a3Portrait'), 297, 420], [t('square'), 200, 200]].map(([l, pw, ph]) => (
               <button key={l} onClick={() => { setW(pw); setH(ph); emit(unit, pw, ph); }}
                 style={{ fontSize: 10, padding: "3px 7px", border: "1px solid #ddd", background: "#fafafa", cursor: "pointer", borderRadius: 3 }}>
                 {l}
@@ -99,7 +93,7 @@ export default function CustomSizePanel({ value, onChange }) {
           </>
         ) : (
           <>
-            {[["FHD", 1920, 1080], ["4K", 3840, 2160], ["スマホ", 1170, 2532], ["iPad", 2048, 2732]].map(([l, pw, ph]) => (
+            {[[t('fhd'), 1920, 1080], [t('k4'), 3840, 2160], [t('mobile'), 1170, 2532], [t('ipad'), 2048, 2732]].map(([l, pw, ph]) => (
               <button key={l} onClick={() => { setW(pw); setH(ph); emit(unit, pw, ph); }}
                 style={{ fontSize: 10, padding: "3px 7px", border: "1px solid #ddd", background: "#fafafa", cursor: "pointer", borderRadius: 3 }}>
                 {l}
@@ -110,9 +104,9 @@ export default function CustomSizePanel({ value, onChange }) {
       </div>
 
       <div style={{ marginTop: 8, fontSize: 10, color: "#aaa" }}>
-        アスペクト比: {w} : {h}
-        {unit === "mm" && <span style={{ marginLeft: 8 }}>（印刷用・CMYK推奨）</span>}
-        {unit === "px" && <span style={{ marginLeft: 8 }}>（画面用・RGB）</span>}
+        {t('aspectRatio')}: {w} : {h}
+        {unit === "mm" && <span style={{ marginLeft: 8 }}>{t('cmykNotice')}</span>}
+        {unit === "px" && <span style={{ marginLeft: 8 }}>{t('rgbNotice')}</span>}
       </div>
     </div>
   );

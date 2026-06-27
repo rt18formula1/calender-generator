@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import html2canvas from "html2canvas";
+import { useI18n } from "@/lib/i18n";
 
 export default function ExportButton({ layoutRef, orientation }) {
+  const { t } = useI18n();
   const [loading, setLoading] = useState(false);
 
   const handleExport = async () => {
     if (!layoutRef?.current) return;
     setLoading(true);
 
-    // A4全体のDOMをそのままキャプチャ → PNG出力
     const canvas = await html2canvas(layoutRef.current, {
       scale: 4,
       useCORS: true,
@@ -33,7 +34,7 @@ export default function ExportButton({ layoutRef, orientation }) {
       className="rounded-none border-neutral-300 h-11 tracking-[0.15em] uppercase text-xs"
     >
       <Download className="w-4 h-4 mr-2" strokeWidth={1.4} />
-      {loading ? "出力中..." : "PNG 出力"}
+      {loading ? t('exporting') : t('exportPng')}
     </Button>
   );
 }
