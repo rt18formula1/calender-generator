@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://calender-generator.vercel.app/sitemap.xml

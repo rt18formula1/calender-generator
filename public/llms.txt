@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Calendar Generator AI Crawl Guide
+
+This file provides a structured overview for AI crawlers to understand the content and purpose of the Calendar Generator website.
+
+## Website Purpose
+Calendar Generator is an elegant, bespoke web application that allows users to create personalized calendars by blending their personal artwork with monthly grids. It supports various templates, custom sizes, and high-quality exports.
+
+## Key Features
+- **Personalized Artwork**: Users can upload their own images to be featured in the calendar.
+- **Monthly Grids**: Automatically generates accurate calendar grids for any month and year.
+- **Templates**: Offers multiple design templates, including IKEA-style frames and mobile wallpapers.
+- **Customization**: Supports custom dimensions and orientation (Portrait/Landscape) detection.
+- **Export**: Provides high-quality image export for printing or digital use.
+
+## Core Content Sections
+- **Main Generator**: The primary interface at the root URL where users configure and preview their calendars.
+- **Template Selection**: Options to choose between different visual styles and formats.
+- **Artwork Upload**: Interactive area for image placement and preview.
+
+## Important Notes for AI
+- The site is a single-page application (SPA) focused on utility and design.
+- The content is dynamic based on user input (month, year, image).
+- The generator is optimized for both desktop and mobile use.
+
+Sitemap: https://calender-generator.vercel.app/sitemap.xml
